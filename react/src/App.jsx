@@ -18,6 +18,8 @@ import steak from "./assets/RandomFood/steak.jpg";
 import chopseuy from "./assets/RandomFood/chopseuy.jpg";
 
 function App() {
+    let base_url = `https://api.spoonacular.com/recipes/random?number=1&include-tags=vegetarian,dessert&exclude-tags=quinoa&apiKey=YOUR-API-KEY.`;
+
     return (
         <>
             <nav>
@@ -55,7 +57,7 @@ function App() {
                     <div className="d-md-flex align-items-center gap-4 mobile d-none">
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                         <FontAwesomeIcon icon={faBookmark} />
-                        <div className="ms-3">
+                        <div className="ms-3 d-none">
                             <button className="btn btn-primary">sign in</button>
                         </div>
                     </div>
