@@ -142,6 +142,10 @@ a {
     );
 }
 
+.w-75 {
+    width: 75%;
+}
+
 /* --------------------------- */
 
 .btn {
@@ -302,6 +306,15 @@ footer {
     .container-fluid {
         padding: 0 7% !important;
     }
+
+    /* ---------------------------- */
+    /* ---------------------------- */
+    /* ---------------------------- */
+    /* ---------------------------- */
+
+    .recipe-info .left {
+        padding: 20px !important;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -332,28 +345,58 @@ footer {
     nav .bar {
         display: none !important;
     }
+
+    /* ---------------------------- */
+    /* ---------------------------- */
+    /* ---------------------------- */
+    /* ---------------------------- */
+
+    .flex-container > div {
+        flex: 1;
+    }
+
+    .recipe-header .left {
+        width: fit-content;
+
+        padding: 20px;
+    }
+    .recipe-header .header-container {
+        align-items: center !important;
+    }
+
+    .recipe-header .pizza-banner {
+        border-radius: 50px;
+        align-self: normal;
+    }
+
+    .recipe-header .pizza-banner img {
+        border-radius: 50px;
+    }
 }
 
 /* --------------------------- */
 /* --------------------------- */
 /* --------------------------- */
-.flex-container > div {
-    flex: 1;
-}
 
 /* --------------------------- */
 .recipe-header .pizza-banner {
+    border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
 
     background: rgba(72, 112, 80, 0.8);
-    min-height: 70vh !important;
-    width: auto; /* Adjusts the width automatically to maintain aspect ratio */
+    /* min-height: 50vh !important; */
+    width: 100%; /* Adjusts the width automatically to maintain aspect ratio */
 }
 
 .recipe-header .pizza-banner img {
-    /* height: 100% !important; */
-    /* width: auto; */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    position: static !important;
+    top: initial;
+    left: initial;
+    max-width: 100%;
+    max-height: 100%;
     /* object-fit: contain; */
 }
 
@@ -381,8 +424,8 @@ footer {
 
 .recipe-info .box {
     background: #f4f4f4;
-    width: 100px;
-    height: 100px;
+    min-width: 50px;
+    min-height: 50px;
 }
 
 /* ----------------------------- */

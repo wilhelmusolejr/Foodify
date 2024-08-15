@@ -58,6 +58,8 @@ function Recipe() {
         },
     ]);
 
+    let debug = true;
+
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
@@ -86,8 +88,6 @@ function Recipe() {
                 console.error("Error fetching the recipe:", error);
             }
         };
-
-        let debug = false;
 
         let data = {
             recipes: [
@@ -637,9 +637,9 @@ function Recipe() {
 
             <header className="recipe-header">
                 <div className="container-fluid">
-                    <div className="header-container flex-container mt-3 d-flex  ">
+                    <div className="header-container flex-container mt-3 d-flex flex-wrap-reverse p-3">
                         {/* 1 */}
-                        <div className="text-light z-1 p-5">
+                        <div className="text-light py-3 z-1 left">
                             <h1 className="recipe_title">{recipe.title}</h1>
                             <p
                                 className="mt-3 recipe_summary p-3 rounded"
@@ -652,7 +652,7 @@ function Recipe() {
                             </PrimaryButton>
                         </div>
                         {/* 2 */}
-                        <div className="pizza-banner d-flex justify-content-center align-items-center">
+                        <div className="pizza-banner p-3 d-flex justify-content-center align-items-center">
                             <img
                                 src={recipe.image}
                                 alt=""
@@ -665,7 +665,7 @@ function Recipe() {
 
             {recipe.dishTypes && recipe.dishTypes.length > 0 && (
                 <section className="my-5">
-                    <div className="container-fluid d-flex justify-content-center align-items-center gap-2">
+                    <div className="container-fluid d-flex justify-content-center align-items-center flex-wrap gap-2">
                         {recipe.dishTypes.map((dish, index) => (
                             <span key={index} className="badge bg-primary p-2">
                                 {dish}
@@ -676,11 +676,11 @@ function Recipe() {
             )}
 
             <section className="recipe-info my-5">
-                <div className="container-fluid d-flex flex-container">
+                <div className="container-fluid d-flex flex-lg-nowrap flex-wrap flex-container">
                     {/* 1 */}
-                    <div className="left p-5">
+                    <div className="left px-2 py-5">
                         <h2 className="text-center mb-5">Ingredients</h2>
-                        <div className="d-flex flex-wrap gap-3 ">
+                        <div className="d-flex flex-wrap justify-content-center gap-3">
                             {recipe.extendedIngredients.map(
                                 (ingredient, index) => (
                                     <div
@@ -698,7 +698,7 @@ function Recipe() {
                     </div>
 
                     {/* 2 */}
-                    <div className="right p-5">
+                    <div className="right px-2 py-5">
                         <h2 className="text-center mb-5">Instructions</h2>
 
                         <ol
@@ -712,7 +712,7 @@ function Recipe() {
             </section>
 
             <section className="my-5">
-                <div className="container-fluid d-flex justify-content-center align-items-center gap-2">
+                <div className="container-fluid d-flex justify-content-center align-items-center flex-wrap gap-2">
                     {recipe.vegan && <RecipeTag text="vegan" />}
                     {recipe.sustainable && <RecipeTag text="Sustainable" />}
                     {recipe.glutenFree && <RecipeTag text="Gluten Free" />}
@@ -769,10 +769,11 @@ function Recipe() {
                                 >
                                     <div className="accordion-body border rounded">
                                         <div className="d-flex flex-column gap-2">
-                                            <div className="d-flex align-items-center gap-2">
+                                            <div className="d-flex align-items-center flex-wrap gap-2">
                                                 {step.equipment.map(
                                                     (equipment, index) => (
                                                         <img
+                                                            className="rounded"
                                                             key={index}
                                                             src={
                                                                 equipment.image
@@ -794,7 +795,7 @@ function Recipe() {
                 </div>
             </section>
 
-            <section className="my-5">
+            <section className="my-5 d-none">
                 <div className="container-fluid d-flex justify-content-center align-items-center">
                     <div className="d-flex align-items-center">
                         <div className="recipe-clock">

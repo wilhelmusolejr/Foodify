@@ -63,7 +63,7 @@ function Home() {
 
     let number_recipes = 32;
 
-    let debug = false;
+    let debug = true;
 
     useEffect(() => {
         const fetchRecipe = async () => {
