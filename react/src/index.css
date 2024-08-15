@@ -37,8 +37,76 @@ a {
 }
 
 .recipe-parent .card {
+    border-radius: 20px !important;
+    border: 1px solid transparent !important;
+
     min-width: 18rem !important;
+    /* max-width: 18rem !important; */
+    max-width: 350px !important;
+    /* min-height: 400px; */
+    min-height: 420px !important;
+
+    position: relative;
 }
+
+.recipe-parent .card img {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+.recipe-parent .rate {
+    width: 30px;
+    border-radius: 10px;
+}
+
+.recipe-parent .card .card-bookmark {
+    display: none !important;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+
+    background-color: white;
+}
+
+.recipe-parent .card .card-title {
+    font-weight: bold;
+}
+
+.recipe-parent .card .card-text {
+    color: #555;
+}
+
+.recipe-parent .card:hover .card-bookmark {
+    display: flex !important;
+}
+
+.bad {
+    background-color: #ff0000;
+}
+.not-good {
+    background-color: #ff8000;
+}
+.good {
+    background-color: #ffff00;
+}
+.very-good {
+    background-color: #80ff00;
+}
+.exellent {
+    background-color: #00ff00;
+}
+
+/* . */
 
 .recipe-category .card {
     min-width: 150px;
@@ -60,6 +128,10 @@ a {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 /* --------------------------- */
@@ -140,7 +212,7 @@ header p {
 /* --------------------------- */
 /* SHARE */
 .share-recipe {
-    min-height: 70vh;
+    /* min-height: 70vh; */
     overflow: hidden;
 }
 
@@ -171,11 +243,12 @@ header p {
 
 /* --------------------------- */
 /* EXPLORE */
-
-.explore-recipe .recipe-category .card:first-of-type {
+.explore-recipe .recipe-category .card:hover,
+.explore-recipe .recipe-category .card.active {
     opacity: initial;
 }
-.explore-recipe .recipe-category .card:first-of-type img {
+
+.explore-recipe .recipe-category .card.active img {
     border: 5px solid #94e1a5 !important;
 }
 
