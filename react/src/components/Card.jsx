@@ -11,6 +11,8 @@ import {
 import { faSmile, faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import { Link } from "react-router-dom";
+
 function Cards({ recipe }) {
     let recipe_title = 15;
     let recispe_summary = 120;
@@ -25,7 +27,10 @@ function Cards({ recipe }) {
 
     return (
         <>
-            <div className="card shadow cursor-pointer">
+            <Link
+                to={`/recipe/${recipe.id}`}
+                className="card shadow cursor-pointer text-decoration-none"
+            >
                 <img
                     className="card-img-top"
                     src={recipe.image}
@@ -58,7 +63,7 @@ function Cards({ recipe }) {
                 <div className="card-bookmark d-flex align-items-center justify-content-center shadow-lg cursor-pointer">
                     <FontAwesomeIcon icon={faPlus} />
                 </div>
-            </div>
+            </Link>
         </>
     );
 }

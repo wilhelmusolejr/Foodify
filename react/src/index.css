@@ -134,6 +134,14 @@ a {
     cursor: pointer;
 }
 
+.gradient-to-top {
+    background: linear-gradient(
+        to bottom,
+        rgba(240, 255, 244, 0) 0%,
+        #f0fff4 100%
+    );
+}
+
 /* --------------------------- */
 
 .btn {
@@ -243,6 +251,7 @@ header p {
 
 /* --------------------------- */
 /* EXPLORE */
+
 .explore-recipe .recipe-category .card:hover,
 .explore-recipe .recipe-category .card.active {
     opacity: initial;
@@ -323,4 +332,76 @@ footer {
     nav .bar {
         display: none !important;
     }
+}
+
+/* --------------------------- */
+/* --------------------------- */
+/* --------------------------- */
+.flex-container > div {
+    flex: 1;
+}
+
+/* --------------------------- */
+.recipe-header .pizza-banner {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    background: rgba(72, 112, 80, 0.8);
+    min-height: 70vh !important;
+    width: auto; /* Adjusts the width automatically to maintain aspect ratio */
+}
+
+.recipe-header .pizza-banner img {
+    /* height: 100% !important; */
+    /* width: auto; */
+    /* object-fit: contain; */
+}
+
+.recipe-header .recipe_title {
+    width: 80%;
+}
+.recipe-header .recipe_summary {
+    background: #f4f4f4;
+    color: black;
+    text-shadow: none;
+}
+
+/* ----------------------------- */
+.recipe-info .left {
+    background: #537159;
+    border-radius: 50px;
+}
+.recipe-info .right {
+    /* background: red;      */
+}
+
+.recipe-info .left h2 {
+    color: #c7f0d0;
+}
+
+.recipe-info .box {
+    background: #f4f4f4;
+    width: 100px;
+    height: 100px;
+}
+
+/* ----------------------------- */
+.recipe-detailed-instruction .accordion-item {
+    background: #537159 !important;
+    color: white !important;
+}
+.recipe-detailed-instruction button {
+    background: transparent !important;
+    color: white !important;
+}
+.accordion-button::after {
+}
+
+.recipe-time {
+    font-size: 150px;
+    line-height: 0.8;
+}
+.recipe-clock {
+    font-size: 250px;
+    color: #537159;
 }
