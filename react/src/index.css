@@ -164,8 +164,8 @@ a {
 
 /* --------------------------- */
 
-.logo {
-    font-size: 45px;
+a.logo {
+    font-size: 45px !important;
     font-weight: bold;
     color: #c7f0d0;
     -webkit-text-stroke: 1px #537159; /* Outline thickness and color */
