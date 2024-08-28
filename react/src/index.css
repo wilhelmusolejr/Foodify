@@ -28,7 +28,7 @@ a {
     text-transform: capitalize;
     /* font-weight: bold; */
     color: #537159 !important;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .card-parent {
@@ -336,6 +336,10 @@ footer .right svg:nth-of-type(3) {
 /* --------------------------- */
 /* --------------------------- */
 @media (min-width: 768px) {
+    a {
+        font-size: 18px !important;
+    }
+
     header .pizza-banner {
         width: 100%;
         text-align: center;
