@@ -34,7 +34,7 @@ function Cards({ recipe }) {
                 <img
                     className="card-img-top"
                     src={recipe.image}
-                    alt="Card image cap"
+                    alt={recipe.title}
                 />
                 <div className="card-body">
                     <div className="d-flex align-items-center justify-content-between ">

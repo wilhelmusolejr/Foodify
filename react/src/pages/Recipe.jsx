@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { faSmile, faClock } from "@fortawesome/free-regular-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 // component
@@ -734,7 +734,7 @@ function Recipe() {
                     </p>
 
                     <div
-                        className="text-light d-flex flex-column gap-2 accordion"
+                        className="text-light d-flex flex-column gap-2 accordion step-by-step"
                         id="accordionExample"
                     >
                         {recipe.analyzedInstructions[0].steps.map((step) => (

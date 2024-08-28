@@ -40,11 +40,14 @@ a {
     border-radius: 20px !important;
     border: 1px solid transparent !important;
 
-    min-width: 18rem !important;
+    min-width: 250px;
+    max-width: 300px;
+
+    /* min-width: 18rem !important; */
     /* max-width: 18rem !important; */
-    max-width: 350px !important;
+    /* max-width: 350px !important; */
     /* min-height: 400px; */
-    min-height: 420px !important;
+    /* min-height: 420px !important; */
 
     position: relative;
 }
@@ -55,9 +58,9 @@ a {
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
 
-    height: 250px;
+    /* height: 100%; */
+    width: 100%;
     object-fit: cover;
-    object-position: center;
 }
 .recipe-parent .rate {
     width: 30px;
@@ -84,6 +87,7 @@ a {
 
 .recipe-parent .card .card-text {
     color: #555;
+    font-size: 16px;
 }
 
 .recipe-parent .card:hover .card-bookmark {
@@ -283,6 +287,48 @@ footer {
     border-top: 10px solid #29ac43;
     border-bottom: 60px solid #c7f0d0;
     min-height: 30vh;
+
+    position: relative;
+}
+
+footer svg {
+    color: #537159;
+    font-size: 25px;
+}
+
+footer .left svg:nth-of-type(1) {
+    position: absolute;
+    left: 10%;
+    bottom: 35%;
+}
+
+footer .left svg:nth-of-type(2) {
+    position: absolute;
+    left: 15%;
+    bottom: -5%;
+    font-size: 35px;
+}
+
+/* ----------- */
+
+footer .right svg:nth-of-type(1) {
+    position: absolute;
+    right: 15%;
+    bottom: -5%;
+}
+
+footer .right svg:nth-of-type(2) {
+    position: absolute;
+    right: 20%;
+    bottom: 10%;
+    font-size: 35px;
+}
+
+footer .right svg:nth-of-type(3) {
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+    font-size: 30px;
 }
 
 /* --------------------------- */
@@ -447,4 +493,9 @@ footer {
 .recipe-clock {
     font-size: 250px;
     color: #537159;
+}
+
+.step-by-step {
+    max-width: 700px;
+    margin: auto;
 }
