@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Navigator() {
     return (
         <>
-            <nav>
+            <nav className=" position-fixed w-100 z-3">
                 <div className="container-fluid navigator d-flex align-items-center justify-content-between my-3">
                     {/* Logo */}
                     <Logo />

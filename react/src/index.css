@@ -173,6 +173,10 @@ a.logo {
 
 /* --------------------------- */
 /* NAV */
+nav {
+    background: white;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
 nav .active {
     font-weight: bold;
 }
@@ -181,6 +185,10 @@ nav .active {
 /* HEADER */
 header {
     overflow: hidden;
+}
+
+header .container-fluid {
+    margin-top: 20vh;
 }
 
 header .header-container {
