@@ -21,7 +21,7 @@ import CardParent from "../components/CardParent";
 import PrimaryButton from "../components/PrimaryButton";
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
-import CategorySection from "../components/CategorySection";
+// import CategorySection from "../components/CategorySection";
 
 function Home() {
     const [loading, setLoading] = useState(true);
