@@ -1,17 +1,6 @@
-import React from "react";
-
 // Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faBars,
-    faStar,
-    faMagnifyingGlass,
-    faPlus,
-} from "@fortawesome/free-solid-svg-icons";
-import { faSmile, faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
-import { Link } from "react-router-dom";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Cards({ recipe }) {
     let recipe_title = 15;
@@ -27,8 +16,8 @@ function Cards({ recipe }) {
 
     return (
         <>
-            <Link
-                to={`/recipe/${recipe.id}`}
+            <a
+                href={`/recipe/${recipe.id}`}
                 className="card shadow cursor-pointer text-decoration-none"
             >
                 <img
@@ -63,7 +52,7 @@ function Cards({ recipe }) {
                 <div className="card-bookmark d-flex align-items-center justify-content-center shadow-lg cursor-pointer">
                     <FontAwesomeIcon icon={faPlus} />
                 </div>
-            </Link>
+            </a>
         </>
     );
 }

@@ -14,11 +14,530 @@ import CardParent from "../components/CardParent";
 import Card from "../components/Card";
 
 // asset
-import pizzaBanner from "../assets/pizza.png";
 import Loader from "../components/Loader";
 import RecipeTag from "../components/RecipeTag";
 import fried from "../assets/RandomFood/fried.jpg";
 import Footer from "../components/Footer";
+
+let debug = false;
+
+let dataRecipe = {
+    recipes: [
+        {
+            vegetarian: false,
+            vegan: false,
+            glutenFree: true,
+            dairyFree: true,
+            veryHealthy: false,
+            cheap: false,
+            veryPopular: false,
+            sustainable: false,
+            lowFodmap: true,
+            weightWatcherSmartPoints: 21,
+            gaps: "no",
+            preparationMinutes: null,
+            cookingMinutes: null,
+            aggregateLikes: 2,
+            healthScore: 18,
+            creditsText: "foodista.com",
+            sourceName: "foodista.com",
+            pricePerServing: 219.68,
+            extendedIngredients: [
+                {
+                    id: 10020444,
+                    aisle: "Pasta and Rice",
+                    image: "rice-white-long-grain-or-basmatii-cooked.jpg",
+                    consistency: "SOLID",
+                    name: "basmati rice",
+                    nameClean: "basmati rice",
+                    original: "basmati rice",
+                    originalName: "basmati rice",
+                    amount: 4,
+                    unit: "servings",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                        metric: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                    },
+                },
+                {
+                    id: 19334,
+                    aisle: "Baking",
+                    image: "light-brown-sugar.jpg",
+                    consistency: "SOLID",
+                    name: "brown sugar",
+                    nameClean: "golden brown sugar",
+                    original: "1 Tbsp. palm or brown sugar",
+                    originalName: "palm or brown sugar",
+                    amount: 1,
+                    unit: "Tbsp",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 1,
+                            unitShort: "Tbsp",
+                            unitLong: "Tbsp",
+                        },
+                        metric: {
+                            amount: 1,
+                            unitShort: "Tbsp",
+                            unitLong: "Tbsp",
+                        },
+                    },
+                },
+                {
+                    id: 19334,
+                    aisle: "Baking",
+                    image: "dark-brown-sugar.png",
+                    consistency: "SOLID",
+                    name: "brown sugar",
+                    nameClean: "golden brown sugar",
+                    original: "1 Tbsp. palm or brown sugar",
+                    originalName: "palm or brown sugar",
+                    amount: 1,
+                    unit: "Tbsp",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 1,
+                            unitShort: "Tbsp",
+                            unitLong: "Tbsp",
+                        },
+                        metric: {
+                            amount: 1,
+                            unitShort: "Tbsp",
+                            unitLong: "Tbsp",
+                        },
+                    },
+                },
+                {
+                    id: 6179,
+                    aisle: "Ethnic Foods",
+                    image: "asian-fish-sauce.jpg",
+                    consistency: "LIQUID",
+                    name: "fish sauce",
+                    nameClean: "fish sauce",
+                    original: "2 Tbsp. fish sauce",
+                    originalName: "fish sauce",
+                    amount: 2,
+                    unit: "Tbsp",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                        metric: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                    },
+                },
+                {
+                    id: 9160,
+                    aisle: "Produce",
+                    image: "lime-juice.png",
+                    consistency: "LIQUID",
+                    name: "lime juice",
+                    nameClean: "lime juice",
+                    original: "2 Tbsp. fresh lime juice, or wedges for serving",
+                    originalName: "fresh lime juice, or wedges for serving",
+                    amount: 2,
+                    unit: "Tbsp",
+                    meta: ["fresh", "for serving"],
+                    measures: {
+                        us: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                        metric: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                    },
+                },
+                {
+                    id: 10211821,
+                    aisle: "Produce",
+                    image: "yellow-bell-pepper.jpg",
+                    consistency: "SOLID",
+                    name: "bell pepper",
+                    nameClean: "bell pepper",
+                    original: "pepper",
+                    originalName: "pepper",
+                    amount: 4,
+                    unit: "servings",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                        metric: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                    },
+                },
+                {
+                    id: 10211821,
+                    aisle: "Produce",
+                    image: "bell-pepper-orange.png",
+                    consistency: "SOLID",
+                    name: "bell pepper",
+                    nameClean: "bell pepper",
+                    original: "pepper",
+                    originalName: "pepper",
+                    amount: 4,
+                    unit: "servings",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                        metric: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                    },
+                },
+                {
+                    id: 2047,
+                    aisle: "Spices and Seasonings",
+                    image: "salt.jpg",
+                    consistency: "SOLID",
+                    name: "salt",
+                    nameClean: "table salt",
+                    original: "Salt",
+                    originalName: "Salt",
+                    amount: 4,
+                    unit: "servings",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                        metric: {
+                            amount: 4,
+                            unitShort: "servings",
+                            unitLong: "servings",
+                        },
+                    },
+                },
+                {
+                    id: 1055062,
+                    aisle: "Meat",
+                    image: "chicken-breasts.png",
+                    consistency: "SOLID",
+                    name: "chicken breasts",
+                    nameClean: "boneless skinless chicken breast",
+                    original: "2 large boneless, skinless, chicken breasts",
+                    originalName: "boneless, skinless, chicken breasts",
+                    amount: 2,
+                    unit: "large",
+                    meta: ["boneless", "skinless"],
+                    measures: {
+                        us: {
+                            amount: 2,
+                            unitShort: "large",
+                            unitLong: "larges",
+                        },
+                        metric: {
+                            amount: 2,
+                            unitShort: "large",
+                            unitLong: "larges",
+                        },
+                    },
+                },
+                {
+                    id: 12117,
+                    aisle: "Canned and Jarred",
+                    image: "coconut-milk.png",
+                    consistency: "LIQUID",
+                    name: "coconut milk",
+                    nameClean: "unsweetened coconut milk",
+                    original: "1 (14oz) can unsweetened coconut milk",
+                    originalName: "unsweetened coconut milk",
+                    amount: 14,
+                    unit: "oz",
+                    meta: ["unsweetened", "canned"],
+                    measures: {
+                        us: {
+                            amount: 14,
+                            unitShort: "oz",
+                            unitLong: "ounces",
+                        },
+                        metric: {
+                            amount: 396.893,
+                            unitShort: "g",
+                            unitLong: "grams",
+                        },
+                    },
+                },
+                {
+                    id: 4669,
+                    aisle: "Oil, Vinegar, Salad Dressing",
+                    image: "vegetable-oil.jpg",
+                    consistency: "LIQUID",
+                    name: "vegetable oil",
+                    nameClean: "vegetable oil",
+                    original: "2 Tbsp. grapeseed or vegetable oil",
+                    originalName: "grapeseed or vegetable oil",
+                    amount: 2,
+                    unit: "Tbsp",
+                    meta: [],
+                    measures: {
+                        us: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                        metric: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                    },
+                },
+                {
+                    id: 10093605,
+                    aisle: "Ethnic Foods",
+                    image: "green-curry-paste.png",
+                    consistency: "SOLID",
+                    name: "curry paste",
+                    nameClean: "green curry paste",
+                    original: "2 Tbsp. curry paste (green, red, or yellow)",
+                    originalName: "curry paste (green, red, or yellow)",
+                    amount: 2,
+                    unit: "Tbsp",
+                    meta: ["green", "red", "yellow", "(, , or )"],
+                    measures: {
+                        us: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                        metric: {
+                            amount: 2,
+                            unitShort: "Tbsps",
+                            unitLong: "Tbsps",
+                        },
+                    },
+                },
+            ],
+            id: 641145,
+            title: "Curry-Braised Chicken",
+            readyInMinutes: 75,
+            servings: 4,
+            sourceUrl:
+                "http://www.foodista.com/recipe/YN6PSSKQ/curry-braised-chicken",
+            image: "https://img.spoonacular.com/recipes/641145-556x370.jpg",
+            imageType: "jpg",
+            summary:
+                'Forget going out to eat or ordering takeout every time you crave Indian food. Try making Curry-Braised Chicken at home. This recipe serves 4. For \u003Cb\u003E$2.2 per serving\u003C/b\u003E, this recipe \u003Cb\u003Ecovers 26%\u003C/b\u003E of your daily requirements of vitamins and minerals. This main course has \u003Cb\u003E565 calories\u003C/b\u003E, \u003Cb\u003E19g of protein\u003C/b\u003E, and \u003Cb\u003E33g of fat\u003C/b\u003E per serving. This recipe is liked by 2 foodies and cooks. If you have lime juice, chicken breasts, coconut milk, and a few other ingredients on hand, you can make it. From preparation to the plate, this recipe takes around \u003Cb\u003E1 hour and 15 minutes\u003C/b\u003E. It is brought to you by Foodista. It is a good option if you\'re following a \u003Cb\u003Egluten free, dairy free, and fodmap friendly\u003C/b\u003E diet. With a spoonacular \u003Cb\u003Escore of 64%\u003C/b\u003E, this dish is good. Try \u003Ca href="https://spoonacular.com/recipes/curry-braised-chicken-legs-1531923"\u003ECurry Braised Chicken Legs\u003C/a\u003E, \u003Ca href="https://spoonacular.com/recipes/coconut-curry-braised-chicken-thighs-1040009"\u003ECoconut-Curry Braised Chicken Thighs\u003C/a\u003E, and \u003Ca href="https://spoonacular.com/recipes/curry-and-yogurt-braised-chicken-thighs-74523"\u003ECurry-and-Yogurt-Braised Chicken Thighs\u003C/a\u003E for similar recipes.',
+            cuisines: ["Indian", "Asian"],
+            dishTypes: ["lunch", "main course", "main dish", "dinner"],
+            diets: ["gluten free", "dairy free", "fodmap friendly"],
+            occasions: [],
+            instructions:
+                "\u003Col\u003E\u003Cli\u003EPreheat your oven to 325 degrees Fahrenheit.\u003C/li\u003E\u003Cli\u003ECut the chicken breasts in half. Heat oil over medium-high in a Dutch oven. Dust chicken with salt and pepper, then brown 1-2 minutes per side in the oil, working in batches. Set chicken aside.\u003C/li\u003E\u003Cli\u003EAdd curry paste to the Dutch oven, then use a wooden spoon to break up large pieces and work the paste into the hot oil. Once combined, add the coconut milk and use the wooden spoon to release any browned pieces of chicken stuck to the pot. Stir in the fish sauce and sugar.\u003C/li\u003E\u003Cli\u003ECover the Dutch oven and place in the oven. Bake for 45-55 minutes, or until chicken is cooked through and no longer pink.\u003C/li\u003E\u003Cli\u003EStir in the lime juice and serve with cooked rice.\u003C/li\u003E\u003C/ol\u003E",
+            analyzedInstructions: [
+                {
+                    name: "",
+                    steps: [
+                        {
+                            number: 1,
+                            step: "Preheat your oven to 325 degrees Fahrenheit.",
+                            ingredients: [],
+                            equipment: [
+                                {
+                                    id: 404784,
+                                    name: "oven",
+                                    localizedName: "oven",
+                                    image: "https://spoonacular.com/cdn/equipment_100x100/oven.jpg",
+                                    temperature: {
+                                        number: 325,
+                                        unit: "Fahrenheit",
+                                    },
+                                },
+                            ],
+                        },
+                        {
+                            number: 2,
+                            step: "Cut the chicken breasts in half.",
+                            ingredients: [
+                                {
+                                    id: 5062,
+                                    name: "chicken breast",
+                                    localizedName: "chicken breast",
+                                    image: "chicken-breasts.png",
+                                },
+                            ],
+                            equipment: [],
+                        },
+                        {
+                            number: 3,
+                            step: "Heat oil over medium-high in a Dutch oven. Dust chicken with salt and pepper, then brown 1-2 minutes per side in the oil, working in batches. Set chicken aside.",
+                            ingredients: [
+                                {
+                                    id: 1102047,
+                                    name: "salt and pepper",
+                                    localizedName: "salt and pepper",
+                                    image: "salt-and-pepper.jpg",
+                                },
+                                {
+                                    id: 0,
+                                    name: "chicken",
+                                    localizedName: "chicken",
+                                    image: "whole-chicken.jpg",
+                                },
+                                {
+                                    id: 4582,
+                                    name: "cooking oil",
+                                    localizedName: "cooking oil",
+                                    image: "vegetable-oil.jpg",
+                                },
+                            ],
+                            equipment: [
+                                {
+                                    id: 404667,
+                                    name: "dutch oven",
+                                    localizedName: "dutch oven",
+                                    image: "https://spoonacular.com/cdn/equipment_100x100/dutch-oven.jpg",
+                                },
+                            ],
+                            length: {
+                                number: 2,
+                                unit: "minutes",
+                            },
+                        },
+                        {
+                            number: 4,
+                            step: "Add curry paste to the Dutch oven, then use a wooden spoon to break up large pieces and work the paste into the hot oil. Once combined, add the coconut milk and use the wooden spoon to release any browned pieces of chicken stuck to the pot. Stir in the fish sauce and sugar.Cover the Dutch oven and place in the oven.",
+                            ingredients: [
+                                {
+                                    id: 12118,
+                                    name: "coconut milk",
+                                    localizedName: "coconut milk",
+                                    image: "coconut-milk.png",
+                                },
+                                {
+                                    id: 93605,
+                                    name: "curry paste",
+                                    localizedName: "curry paste",
+                                    image: "chili-paste.png",
+                                },
+                                {
+                                    id: 6179,
+                                    name: "fish sauce",
+                                    localizedName: "fish sauce",
+                                    image: "asian-fish-sauce.jpg",
+                                },
+                                {
+                                    id: 0,
+                                    name: "chicken",
+                                    localizedName: "chicken",
+                                    image: "whole-chicken.jpg",
+                                },
+                                {
+                                    id: 19335,
+                                    name: "sugar",
+                                    localizedName: "sugar",
+                                    image: "sugar-in-bowl.png",
+                                },
+                                {
+                                    id: 4582,
+                                    name: "cooking oil",
+                                    localizedName: "cooking oil",
+                                    image: "vegetable-oil.jpg",
+                                },
+                            ],
+                            equipment: [
+                                {
+                                    id: 404732,
+                                    name: "wooden spoon",
+                                    localizedName: "wooden spoon",
+                                    image: "https://spoonacular.com/cdn/equipment_100x100/wooden-spoon.jpg",
+                                },
+                                {
+                                    id: 404667,
+                                    name: "dutch oven",
+                                    localizedName: "dutch oven",
+                                    image: "https://spoonacular.com/cdn/equipment_100x100/dutch-oven.jpg",
+                                },
+                                {
+                                    id: 404784,
+                                    name: "oven",
+                                    localizedName: "oven",
+                                    image: "https://spoonacular.com/cdn/equipment_100x100/oven.jpg",
+                                },
+                            ],
+                        },
+                        {
+                            number: 5,
+                            step: "Bake for 45-55 minutes, or until chicken is cooked through and no longer pink.Stir in the lime juice and serve with cooked rice.",
+                            ingredients: [
+                                {
+                                    id: 10220445,
+                                    name: "cooked rice",
+                                    localizedName: "cooked rice",
+                                    image: "uncooked-white-rice.png",
+                                },
+                                {
+                                    id: 9160,
+                                    name: "lime juice",
+                                    localizedName: "lime juice",
+                                    image: "lime-juice.png",
+                                },
+                                {
+                                    id: 0,
+                                    name: "chicken",
+                                    localizedName: "chicken",
+                                    image: "whole-chicken.jpg",
+                                },
+                            ],
+                            equipment: [
+                                {
+                                    id: 404784,
+                                    name: "oven",
+                                    localizedName: "oven",
+                                    image: "https://spoonacular.com/cdn/equipment_100x100/oven.jpg",
+                                },
+                            ],
+                            length: {
+                                number: 55,
+                                unit: "minutes",
+                            },
+                        },
+                    ],
+                },
+            ],
+            originalId: null,
+            spoonacularScore: 66.2137222290039,
+            spoonacularSourceUrl:
+                "https://spoonacular.com/curry-braised-chicken-641145",
+        },
+    ],
+};
 
 function Recipe() {
     const { id } = useParams();
@@ -57,14 +576,33 @@ function Recipe() {
             image: "https://img.spoonacular.com/recipes/657031-556x370.jpg",
         },
     ]);
-
-    let debug = true;
+    const [toast, setToast] = useState(false);
 
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
                 const response = await fetch(id_recipe);
                 const data = await response.json();
+
+                console.log(data);
+
+                if (data.code === 402) {
+                    console.log("API Limit reached");
+
+                    let temp = [
+                        dataRecipe.recipes[0],
+                        dataRecipe.recipes[0],
+                        dataRecipe.recipes[0],
+                        dataRecipe.recipes[0],
+                    ];
+
+                    setRecipe(dataRecipe.recipes[0]);
+                    setSimilarRecipe(temp);
+                    setLoading(false);
+                    setToast(true);
+
+                    return;
+                }
 
                 setRecipe(data);
 
@@ -89,543 +627,34 @@ function Recipe() {
             }
         };
 
-        let data = {
-            recipes: [
-                {
-                    vegetarian: false,
-                    vegan: false,
-                    glutenFree: true,
-                    dairyFree: true,
-                    veryHealthy: false,
-                    cheap: false,
-                    veryPopular: false,
-                    sustainable: false,
-                    lowFodmap: true,
-                    weightWatcherSmartPoints: 21,
-                    gaps: "no",
-                    preparationMinutes: null,
-                    cookingMinutes: null,
-                    aggregateLikes: 2,
-                    healthScore: 18,
-                    creditsText: "foodista.com",
-                    sourceName: "foodista.com",
-                    pricePerServing: 219.68,
-                    extendedIngredients: [
-                        {
-                            id: 10020444,
-                            aisle: "Pasta and Rice",
-                            image: "rice-white-long-grain-or-basmatii-cooked.jpg",
-                            consistency: "SOLID",
-                            name: "basmati rice",
-                            nameClean: "basmati rice",
-                            original: "basmati rice",
-                            originalName: "basmati rice",
-                            amount: 4,
-                            unit: "servings",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                                metric: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                            },
-                        },
-                        {
-                            id: 19334,
-                            aisle: "Baking",
-                            image: "light-brown-sugar.jpg",
-                            consistency: "SOLID",
-                            name: "brown sugar",
-                            nameClean: "golden brown sugar",
-                            original: "1 Tbsp. palm or brown sugar",
-                            originalName: "palm or brown sugar",
-                            amount: 1,
-                            unit: "Tbsp",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 1,
-                                    unitShort: "Tbsp",
-                                    unitLong: "Tbsp",
-                                },
-                                metric: {
-                                    amount: 1,
-                                    unitShort: "Tbsp",
-                                    unitLong: "Tbsp",
-                                },
-                            },
-                        },
-                        {
-                            id: 19334,
-                            aisle: "Baking",
-                            image: "dark-brown-sugar.png",
-                            consistency: "SOLID",
-                            name: "brown sugar",
-                            nameClean: "golden brown sugar",
-                            original: "1 Tbsp. palm or brown sugar",
-                            originalName: "palm or brown sugar",
-                            amount: 1,
-                            unit: "Tbsp",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 1,
-                                    unitShort: "Tbsp",
-                                    unitLong: "Tbsp",
-                                },
-                                metric: {
-                                    amount: 1,
-                                    unitShort: "Tbsp",
-                                    unitLong: "Tbsp",
-                                },
-                            },
-                        },
-                        {
-                            id: 6179,
-                            aisle: "Ethnic Foods",
-                            image: "asian-fish-sauce.jpg",
-                            consistency: "LIQUID",
-                            name: "fish sauce",
-                            nameClean: "fish sauce",
-                            original: "2 Tbsp. fish sauce",
-                            originalName: "fish sauce",
-                            amount: 2,
-                            unit: "Tbsp",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                                metric: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                            },
-                        },
-                        {
-                            id: 9160,
-                            aisle: "Produce",
-                            image: "lime-juice.png",
-                            consistency: "LIQUID",
-                            name: "lime juice",
-                            nameClean: "lime juice",
-                            original:
-                                "2 Tbsp. fresh lime juice, or wedges for serving",
-                            originalName:
-                                "fresh lime juice, or wedges for serving",
-                            amount: 2,
-                            unit: "Tbsp",
-                            meta: ["fresh", "for serving"],
-                            measures: {
-                                us: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                                metric: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                            },
-                        },
-                        {
-                            id: 10211821,
-                            aisle: "Produce",
-                            image: "yellow-bell-pepper.jpg",
-                            consistency: "SOLID",
-                            name: "bell pepper",
-                            nameClean: "bell pepper",
-                            original: "pepper",
-                            originalName: "pepper",
-                            amount: 4,
-                            unit: "servings",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                                metric: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                            },
-                        },
-                        {
-                            id: 10211821,
-                            aisle: "Produce",
-                            image: "bell-pepper-orange.png",
-                            consistency: "SOLID",
-                            name: "bell pepper",
-                            nameClean: "bell pepper",
-                            original: "pepper",
-                            originalName: "pepper",
-                            amount: 4,
-                            unit: "servings",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                                metric: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                            },
-                        },
-                        {
-                            id: 2047,
-                            aisle: "Spices and Seasonings",
-                            image: "salt.jpg",
-                            consistency: "SOLID",
-                            name: "salt",
-                            nameClean: "table salt",
-                            original: "Salt",
-                            originalName: "Salt",
-                            amount: 4,
-                            unit: "servings",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                                metric: {
-                                    amount: 4,
-                                    unitShort: "servings",
-                                    unitLong: "servings",
-                                },
-                            },
-                        },
-                        {
-                            id: 1055062,
-                            aisle: "Meat",
-                            image: "chicken-breasts.png",
-                            consistency: "SOLID",
-                            name: "chicken breasts",
-                            nameClean: "boneless skinless chicken breast",
-                            original:
-                                "2 large boneless, skinless, chicken breasts",
-                            originalName: "boneless, skinless, chicken breasts",
-                            amount: 2,
-                            unit: "large",
-                            meta: ["boneless", "skinless"],
-                            measures: {
-                                us: {
-                                    amount: 2,
-                                    unitShort: "large",
-                                    unitLong: "larges",
-                                },
-                                metric: {
-                                    amount: 2,
-                                    unitShort: "large",
-                                    unitLong: "larges",
-                                },
-                            },
-                        },
-                        {
-                            id: 12117,
-                            aisle: "Canned and Jarred",
-                            image: "coconut-milk.png",
-                            consistency: "LIQUID",
-                            name: "coconut milk",
-                            nameClean: "unsweetened coconut milk",
-                            original: "1 (14oz) can unsweetened coconut milk",
-                            originalName: "unsweetened coconut milk",
-                            amount: 14,
-                            unit: "oz",
-                            meta: ["unsweetened", "canned"],
-                            measures: {
-                                us: {
-                                    amount: 14,
-                                    unitShort: "oz",
-                                    unitLong: "ounces",
-                                },
-                                metric: {
-                                    amount: 396.893,
-                                    unitShort: "g",
-                                    unitLong: "grams",
-                                },
-                            },
-                        },
-                        {
-                            id: 4669,
-                            aisle: "Oil, Vinegar, Salad Dressing",
-                            image: "vegetable-oil.jpg",
-                            consistency: "LIQUID",
-                            name: "vegetable oil",
-                            nameClean: "vegetable oil",
-                            original: "2 Tbsp. grapeseed or vegetable oil",
-                            originalName: "grapeseed or vegetable oil",
-                            amount: 2,
-                            unit: "Tbsp",
-                            meta: [],
-                            measures: {
-                                us: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                                metric: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                            },
-                        },
-                        {
-                            id: 10093605,
-                            aisle: "Ethnic Foods",
-                            image: "green-curry-paste.png",
-                            consistency: "SOLID",
-                            name: "curry paste",
-                            nameClean: "green curry paste",
-                            original:
-                                "2 Tbsp. curry paste (green, red, or yellow)",
-                            originalName: "curry paste (green, red, or yellow)",
-                            amount: 2,
-                            unit: "Tbsp",
-                            meta: ["green", "red", "yellow", "(, , or )"],
-                            measures: {
-                                us: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                                metric: {
-                                    amount: 2,
-                                    unitShort: "Tbsps",
-                                    unitLong: "Tbsps",
-                                },
-                            },
-                        },
-                    ],
-                    id: 641145,
-                    title: "Curry-Braised Chicken",
-                    readyInMinutes: 75,
-                    servings: 4,
-                    sourceUrl:
-                        "http://www.foodista.com/recipe/YN6PSSKQ/curry-braised-chicken",
-                    image: "https://img.spoonacular.com/recipes/641145-556x370.jpg",
-                    imageType: "jpg",
-                    summary:
-                        'Forget going out to eat or ordering takeout every time you crave Indian food. Try making Curry-Braised Chicken at home. This recipe serves 4. For \u003Cb\u003E$2.2 per serving\u003C/b\u003E, this recipe \u003Cb\u003Ecovers 26%\u003C/b\u003E of your daily requirements of vitamins and minerals. This main course has \u003Cb\u003E565 calories\u003C/b\u003E, \u003Cb\u003E19g of protein\u003C/b\u003E, and \u003Cb\u003E33g of fat\u003C/b\u003E per serving. This recipe is liked by 2 foodies and cooks. If you have lime juice, chicken breasts, coconut milk, and a few other ingredients on hand, you can make it. From preparation to the plate, this recipe takes around \u003Cb\u003E1 hour and 15 minutes\u003C/b\u003E. It is brought to you by Foodista. It is a good option if you\'re following a \u003Cb\u003Egluten free, dairy free, and fodmap friendly\u003C/b\u003E diet. With a spoonacular \u003Cb\u003Escore of 64%\u003C/b\u003E, this dish is good. Try \u003Ca href="https://spoonacular.com/recipes/curry-braised-chicken-legs-1531923"\u003ECurry Braised Chicken Legs\u003C/a\u003E, \u003Ca href="https://spoonacular.com/recipes/coconut-curry-braised-chicken-thighs-1040009"\u003ECoconut-Curry Braised Chicken Thighs\u003C/a\u003E, and \u003Ca href="https://spoonacular.com/recipes/curry-and-yogurt-braised-chicken-thighs-74523"\u003ECurry-and-Yogurt-Braised Chicken Thighs\u003C/a\u003E for similar recipes.',
-                    cuisines: ["Indian", "Asian"],
-                    dishTypes: ["lunch", "main course", "main dish", "dinner"],
-                    diets: ["gluten free", "dairy free", "fodmap friendly"],
-                    occasions: [],
-                    instructions:
-                        "\u003Col\u003E\u003Cli\u003EPreheat your oven to 325 degrees Fahrenheit.\u003C/li\u003E\u003Cli\u003ECut the chicken breasts in half. Heat oil over medium-high in a Dutch oven. Dust chicken with salt and pepper, then brown 1-2 minutes per side in the oil, working in batches. Set chicken aside.\u003C/li\u003E\u003Cli\u003EAdd curry paste to the Dutch oven, then use a wooden spoon to break up large pieces and work the paste into the hot oil. Once combined, add the coconut milk and use the wooden spoon to release any browned pieces of chicken stuck to the pot. Stir in the fish sauce and sugar.\u003C/li\u003E\u003Cli\u003ECover the Dutch oven and place in the oven. Bake for 45-55 minutes, or until chicken is cooked through and no longer pink.\u003C/li\u003E\u003Cli\u003EStir in the lime juice and serve with cooked rice.\u003C/li\u003E\u003C/ol\u003E",
-                    analyzedInstructions: [
-                        {
-                            name: "",
-                            steps: [
-                                {
-                                    number: 1,
-                                    step: "Preheat your oven to 325 degrees Fahrenheit.",
-                                    ingredients: [],
-                                    equipment: [
-                                        {
-                                            id: 404784,
-                                            name: "oven",
-                                            localizedName: "oven",
-                                            image: "https://spoonacular.com/cdn/equipment_100x100/oven.jpg",
-                                            temperature: {
-                                                number: 325,
-                                                unit: "Fahrenheit",
-                                            },
-                                        },
-                                    ],
-                                },
-                                {
-                                    number: 2,
-                                    step: "Cut the chicken breasts in half.",
-                                    ingredients: [
-                                        {
-                                            id: 5062,
-                                            name: "chicken breast",
-                                            localizedName: "chicken breast",
-                                            image: "chicken-breasts.png",
-                                        },
-                                    ],
-                                    equipment: [],
-                                },
-                                {
-                                    number: 3,
-                                    step: "Heat oil over medium-high in a Dutch oven. Dust chicken with salt and pepper, then brown 1-2 minutes per side in the oil, working in batches. Set chicken aside.",
-                                    ingredients: [
-                                        {
-                                            id: 1102047,
-                                            name: "salt and pepper",
-                                            localizedName: "salt and pepper",
-                                            image: "salt-and-pepper.jpg",
-                                        },
-                                        {
-                                            id: 0,
-                                            name: "chicken",
-                                            localizedName: "chicken",
-                                            image: "whole-chicken.jpg",
-                                        },
-                                        {
-                                            id: 4582,
-                                            name: "cooking oil",
-                                            localizedName: "cooking oil",
-                                            image: "vegetable-oil.jpg",
-                                        },
-                                    ],
-                                    equipment: [
-                                        {
-                                            id: 404667,
-                                            name: "dutch oven",
-                                            localizedName: "dutch oven",
-                                            image: "https://spoonacular.com/cdn/equipment_100x100/dutch-oven.jpg",
-                                        },
-                                    ],
-                                    length: {
-                                        number: 2,
-                                        unit: "minutes",
-                                    },
-                                },
-                                {
-                                    number: 4,
-                                    step: "Add curry paste to the Dutch oven, then use a wooden spoon to break up large pieces and work the paste into the hot oil. Once combined, add the coconut milk and use the wooden spoon to release any browned pieces of chicken stuck to the pot. Stir in the fish sauce and sugar.Cover the Dutch oven and place in the oven.",
-                                    ingredients: [
-                                        {
-                                            id: 12118,
-                                            name: "coconut milk",
-                                            localizedName: "coconut milk",
-                                            image: "coconut-milk.png",
-                                        },
-                                        {
-                                            id: 93605,
-                                            name: "curry paste",
-                                            localizedName: "curry paste",
-                                            image: "chili-paste.png",
-                                        },
-                                        {
-                                            id: 6179,
-                                            name: "fish sauce",
-                                            localizedName: "fish sauce",
-                                            image: "asian-fish-sauce.jpg",
-                                        },
-                                        {
-                                            id: 0,
-                                            name: "chicken",
-                                            localizedName: "chicken",
-                                            image: "whole-chicken.jpg",
-                                        },
-                                        {
-                                            id: 19335,
-                                            name: "sugar",
-                                            localizedName: "sugar",
-                                            image: "sugar-in-bowl.png",
-                                        },
-                                        {
-                                            id: 4582,
-                                            name: "cooking oil",
-                                            localizedName: "cooking oil",
-                                            image: "vegetable-oil.jpg",
-                                        },
-                                    ],
-                                    equipment: [
-                                        {
-                                            id: 404732,
-                                            name: "wooden spoon",
-                                            localizedName: "wooden spoon",
-                                            image: "https://spoonacular.com/cdn/equipment_100x100/wooden-spoon.jpg",
-                                        },
-                                        {
-                                            id: 404667,
-                                            name: "dutch oven",
-                                            localizedName: "dutch oven",
-                                            image: "https://spoonacular.com/cdn/equipment_100x100/dutch-oven.jpg",
-                                        },
-                                        {
-                                            id: 404784,
-                                            name: "oven",
-                                            localizedName: "oven",
-                                            image: "https://spoonacular.com/cdn/equipment_100x100/oven.jpg",
-                                        },
-                                    ],
-                                },
-                                {
-                                    number: 5,
-                                    step: "Bake for 45-55 minutes, or until chicken is cooked through and no longer pink.Stir in the lime juice and serve with cooked rice.",
-                                    ingredients: [
-                                        {
-                                            id: 10220445,
-                                            name: "cooked rice",
-                                            localizedName: "cooked rice",
-                                            image: "uncooked-white-rice.png",
-                                        },
-                                        {
-                                            id: 9160,
-                                            name: "lime juice",
-                                            localizedName: "lime juice",
-                                            image: "lime-juice.png",
-                                        },
-                                        {
-                                            id: 0,
-                                            name: "chicken",
-                                            localizedName: "chicken",
-                                            image: "whole-chicken.jpg",
-                                        },
-                                    ],
-                                    equipment: [
-                                        {
-                                            id: 404784,
-                                            name: "oven",
-                                            localizedName: "oven",
-                                            image: "https://spoonacular.com/cdn/equipment_100x100/oven.jpg",
-                                        },
-                                    ],
-                                    length: {
-                                        number: 55,
-                                        unit: "minutes",
-                                    },
-                                },
-                            ],
-                        },
-                    ],
-                    originalId: null,
-                    spoonacularScore: 66.2137222290039,
-                    spoonacularSourceUrl:
-                        "https://spoonacular.com/curry-braised-chicken-641145",
-                },
-            ],
-        };
-
         if (debug) {
             let temp = [
-                data.recipes[0],
-                data.recipes[0],
-                data.recipes[0],
-                data.recipes[0],
+                dataRecipe.recipes[0],
+                dataRecipe.recipes[0],
+                dataRecipe.recipes[0],
+                dataRecipe.recipes[0],
             ];
 
-            setRecipe(data.recipes[0]);
+            setRecipe(dataRecipe.recipes[0]);
             setSimilarRecipe(temp);
             setLoading(false);
         } else {
             fetchRecipe();
         }
     }, []);
+
+    useEffect(() => {
+        if (recipe.title) {
+            document.title = `${recipe.title} | Foodify`;
+        } else {
+            document.title = `LOADING | Foodify`;
+        }
+
+        // Cleanup function to reset the document title when the component unmounts
+        return () => {
+            document.title = `Foodify`; // Set a default title or the title you prefer
+        };
+    }, [recipe.title]);
 
     if (loading) {
         return <Loader />;
@@ -634,6 +663,26 @@ function Recipe() {
     return (
         <>
             <Navigator />
+
+            {/* toast-limit */}
+            {toast && (
+                <div
+                    className="toast align-items-center show position-fixed bottom-0 end-0 z-3 text-danger"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                >
+                    <div className="d-flex">
+                        <div className="toast-body">API Limit reached</div>
+                        <button
+                            type="button"
+                            className="btn-close me-2 m-auto"
+                            data-bs-dismiss="toast"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                </div>
+            )}
 
             <header className="recipe-header">
                 <div className="container-fluid">
@@ -698,7 +747,7 @@ function Recipe() {
                     </div>
 
                     {/* 2 */}
-                    <div className="right px-2 py-5">
+                    <div className="right px-3 py-5">
                         <h2 className="text-center mb-5">Instructions</h2>
 
                         <ol
