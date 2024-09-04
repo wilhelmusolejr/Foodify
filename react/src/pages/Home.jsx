@@ -13,6 +13,7 @@ import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
 
 import recipeData from "../data/recipe.json";
+import Toast from "../components/Toast";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -155,24 +156,7 @@ function Home() {
             <Navigator />
 
             {/* toast-limit */}
-            {toast && (
-                <div
-                    className="toast align-items-center show position-fixed z-3 text-danger"
-                    role="alert"
-                    aria-live="assertive"
-                    aria-atomic="true"
-                >
-                    <div className="d-flex">
-                        <div className="toast-body">API Limit reached</div>
-                        <button
-                            type="button"
-                            className="btn-close me-2 m-auto"
-                            data-bs-dismiss="toast"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                </div>
-            )}
+            {toast && <Toast message="Api limit reached" />}
 
             <header>
                 <div className="container-fluid">

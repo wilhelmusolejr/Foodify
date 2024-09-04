@@ -18,6 +18,7 @@ import Loader from "../components/Loader";
 import RecipeTag from "../components/RecipeTag";
 import fried from "../assets/RandomFood/fried.jpg";
 import Footer from "../components/Footer";
+import Toast from "../components/Toast";
 
 let debug = false;
 
@@ -665,24 +666,7 @@ function Recipe() {
             <Navigator />
 
             {/* toast-limit */}
-            {toast && (
-                <div
-                    className="toast align-items-center show position-fixed bottom-0 end-0 z-3 text-danger"
-                    role="alert"
-                    aria-live="assertive"
-                    aria-atomic="true"
-                >
-                    <div className="d-flex">
-                        <div className="toast-body">API Limit reached</div>
-                        <button
-                            type="button"
-                            className="btn-close me-2 m-auto"
-                            data-bs-dismiss="toast"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                </div>
-            )}
+            {toast && <Toast message="Api limit reached" />}
 
             <header className="recipe-header">
                 <div className="container-fluid">
