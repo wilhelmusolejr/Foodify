@@ -157,7 +157,7 @@ function Home() {
             {/* toast-limit */}
             {toast && (
                 <div
-                    className="toast align-items-center show position-fixed bottom-0 end-0 z-3 text-danger"
+                    className="toast align-items-center show position-fixed z-3 text-danger"
                     role="alert"
                     aria-live="assertive"
                     aria-atomic="true"
