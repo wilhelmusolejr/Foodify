@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Loader from "./Loader";
 
+import fried from "../images/fried.jpg";
+
 function CategorySection() {
-    const [loading, setLoading] = useState(true);
-    const [listCategory, setListCategory] = useState([
+    const [loading] = useState(true);
+    const [listCategory] = useState([
         {
             name: "all",
             image: null,

@@ -551,7 +551,7 @@ function Recipe() {
     const [recipe, setRecipe] = useState({});
     const [loading, setLoading] = useState(true);
     const [similarRecipe, setSimilarRecipe] = useState([]);
-    const [listCategory, setListCategory] = useState([
+    const [listCategory] = useState([
         {
             name: "all",
             image: null,
@@ -588,8 +588,6 @@ function Recipe() {
                 console.log(data);
 
                 if (data.code === 402) {
-                    console.log("API Limit reached");
-
                     let temp = [
                         dataRecipe.recipes[0],
                         dataRecipe.recipes[0],
