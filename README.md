@@ -74,5 +74,5 @@ With its user-friendly interface, Foodify makes it easy to search for recipes by
 
 Hi! I’m **Wilhelmus**, a Full Stack Web Developer and Web Designer passionate about building impactful digital experiences.
 
--   <a href="https://wilhelmus.vercel.app/?ref=github_quiztwist" target="_blank">Portfolio</a>
+-   <a href="https://wilhelmus.vercel.app/?ref=github_foodify" target="_blank">Portfolio</a>
 -   <a href="https://www.linkedin.com/in/wilhelmusolejr/" target="_blank">LinkedIn</a>
