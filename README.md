@@ -12,7 +12,7 @@ The app leverages the Spoonacular API, a powerful food-related API that aggregat
 
 With its user-friendly interface, Foodify makes it easy to search for recipes by category, ingredient, or cuisine, providing a seamless experience for both amateur and experienced cooks. The app also offers personalized recipe suggestions based on user preferences and dietary restrictions.
 
-🔗 **Live Demo:** <a href="https://quiztwist-frontend.vercel.app/" target="_blank">https://quiztwist-frontend.vercel.app</a>
+🔗 **Live Demo:** <a href="https://foodify-ivory.vercel.app/" target="_blank">https://foodify-ivory.vercel.app</a>
 
 ---
 
