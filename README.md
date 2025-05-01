@@ -48,11 +48,10 @@ With its user-friendly interface, Foodify makes it easy to search for recipes by
 
 ## 🖼️ Screenshots
 
-|     ![screenshot1](public/github/screenshot1.png)      |     ![screenshot2](public/github/screenshot2.png)      |
-| :----------------------------------------------------: | :----------------------------------------------------: |
-|     ![screenshot3](public/github/screenshot3.png)      |     ![screenshot4](public/github/screenshot4.png)      |
-| :----------------------------------------------------: | :----------------------------------------------------: |
-|     ![screenshot5](public/github/screenshot5.png)      |                                                        |
+| ![screenshot1](public/github/screenshot1.png) | ![screenshot2](public/github/screenshot2.png) |
+| :-------------------------------------------: | :-------------------------------------------: |
+| ![screenshot3](public/github/screenshot3.png) | ![screenshot4](public/github/screenshot4.png) |
+| ![screenshot5](public/github/screenshot5.png) |                                               |
 
 ---
 
